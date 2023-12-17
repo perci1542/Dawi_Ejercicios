@@ -46,6 +46,21 @@ public class ProductoController {
 		return "Crud_Productos";
 	}
 	
+	@GetMapping("/eliminar/{id_prod}")
+	public String Eliminar(Model model, @PathVariable String id_prod) {
+		
+		
+	    repProd.deleteById(id_prod);
+		
+		model.addAttribute("producto", new Producto());
+		
+		model.addAttribute("lstCategorias", repCat.findAll());
+		model.addAttribute("lstProductos", repProd.findAll());
+		
+		return "Crud_Productos";
+	}
+	
+	
 	@PostMapping("/grabar")
 	public String Grabar (@ModelAttribute Producto producto, Model model) {
 		

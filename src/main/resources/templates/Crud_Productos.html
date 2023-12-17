@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Getting Started: Serving Web Content</title>
+<title>Mantenimiento de Productos</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 </head>
@@ -83,18 +83,19 @@
 							<th>Stock</th>
 							<th>P.U</th>
 							<th>Categoría</th>
-							<th>xx</th>
+							<th>Funciones</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="p : ${lstProductos}">
 							<th scope="row" th:text="${p.id_prod}">1</th>
 							<td th:text="${p.des_prod}">xx</td>
-							<td>xx</td>
-							<td>xx</td>
+							<td th:text="${p.stk_prod}"></td>
+							<td th:text="${p.pre_prod}"></td>
 							<td th:text="${p.objCategoria.descripcion}">xx</td>
 							<td>
 								<a th:href="@{/editar/}+${p.id_prod}" class="btn btn-warning">Editar</a>
+								<a th:href="@{/eliminar/}+${p.id_prod}" class="btn btn-warning">Eliminar</a>
 							</td>
 						</tr>
 					</tbody>
