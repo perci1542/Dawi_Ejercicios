@@ -66,8 +66,12 @@
 				</div>
 			</div>
 			
-			<button type="submit" class="btn btn-primary">Registrar</button>
+			<button type="submit" class="btn btn-warning" name = "btn_Opcion" value = "reg" >Registrar</button>
 			<a href="/cargar" class="btn btn-primary ">Nuevo</a>
+			<a href="/reportes" class="btn btn-primary " target = "_blank">Reporte PDF</a>
+			<a href="/graficos" class="btn btn-primary " target = "_blank">Grafico PDF</a>
+			<!-- <a href="/filtros" class="btn btn-primary " target = "_blank">filtros PDF</a> -->
+			<button type="submit" class="btn btn-warning" name = "btn_Opcion" value = "fil">Filtro PDF</button>
 			
 			<div th:text="${Mensaje}" th:class="${cssMensaje}" role="alert"></div>
 		</form>
